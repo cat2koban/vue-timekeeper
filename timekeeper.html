@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>Time Keeper</title>
+<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+  <div id="app">
+    <div class="navbar">
+      <button @click="standby">STANDBY</button>
+      <button @click="start" :class="{ clicked: toggle }">START</button>
+      <button @click="pause">PAUSE</button>
+    </div>
+    <hr>
+    <div id="status" class="has-text-centered">
+      <span>{{ status }}</span>
+    </div>
+    <div id="time" class="has-text-centered">
+      <span>{{ time }}</span>
+    </div>
+    <pre>
+      {{ $data }}
+    </pre>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>
