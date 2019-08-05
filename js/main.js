@@ -4,8 +4,13 @@ var app = new Vue({
     min:    0,
     sec:    0,
     toggle: false,
+    pflg: false,
+    sflg: true,
     status: "STANDBY",
-    intervalID: ""
+    intervalID: "",
+    firstBell: "10:00",
+    secondBell: "15:00",
+    thirdBell: "20:00"
   },
   mounted() {
     if (this.toggle) {
@@ -17,7 +22,7 @@ var app = new Vue({
   methods: {
     updateTime() {
       if (this.sec == 59) {
-        this.min = this.min + 1;
+        this.min = this.min +1;
         this.sec = 0;
       } else {
         this.sec = this.sec + 1;
@@ -26,6 +31,8 @@ var app = new Vue({
     start: function() {
       this.status = "";
       this.toggle = true;
+      this.pflg = false;
+      this.sflg = false;
       this.$mount();
     },
     standby: function() {
@@ -33,12 +40,16 @@ var app = new Vue({
       this.sec = 0;
       this.min = 0;
       this.toggle = false;
+      this.sflg = true;
+      this.pflg = false;
       this.clear();
       this.$mount();
     },
     pause: function() {
       this.status = "PAUSE";
       this.toggle = false;
+      this.pflg = true;
+      this.sflg = false;
       this.clear();
     },
     clear: function() {
