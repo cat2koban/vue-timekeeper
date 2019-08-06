@@ -36,3 +36,7 @@ input {
   border-radius: 1rem;
   border-style: none;
 }
+
+#time {
+  margin-top: 1rem;
+}
