@@ -10,7 +10,7 @@
   <div id="app">
     <div class="navbar">
       <button @click="standby" :class="{ clicked: sflg }">STANDBY</button>
-      <button @click="start" :class="{ clicked: toggle }">START</button>
+      <button @click="start" :class="{ clicked: toggle }" :disabled="toggle">START</button>
       <button @click="pause" :class="{ clicked: pflg }">PAUSE</button>
       <input type="text" v-model="firstBell"></input>
       <input type="text" v-model="secondBell"></input>
